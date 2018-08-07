@@ -1,1 +1,34 @@
-<h1>Roboto Font Apply</h1>
+<mat-sidenav-container (backdropClick)="sideNav.close()">
+    <mat-sidenav #sideNav>
+        <mat-nav-list>
+            <a mat-list-item (click)="sideNav.toggle()">
+                <mat-icon>person_outline</mat-icon>&nbsp;&nbsp;Login
+            </a>
+            <a mat-list-item (click)="sideNav.toggle()">
+                    <mat-icon>person_add</mat-icon>&nbsp;&nbsp;Sign Up
+            </a>
+            <a mat-list-item (click)="sideNav.toggle()">
+                    <mat-icon>home</mat-icon>&nbsp;&nbsp;Home
+            </a>
+            <a mat-list-item (click)="sideNav.toggle()">
+                    <mat-icon>home</mat-icon>&nbsp;&nbsp;Home
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <mat-icon (click)="sideNav.toggle()"> menu</mat-icon>
+            <h1>LOGO</h1>
+            <div fxFlex="grow"></div>
+            <div>
+                <a mat-button>Learn</a>
+                <a mat-button>Earn</a>
+                <a mat-button>Shop</a>
+            </div>
+        </mat-toolbar>
+        <main>
+            <h1>Jashan Bansal</h1>
+            <!-- <router-outlet></router-outlet> -->
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,7 @@
+mat-sidenav-container, mat-sidenav, mat-sidenav-container{
+    height: 100%;
+}
+listItem{
+    display: inline-block;
+    padding-left: 6px;
+}
