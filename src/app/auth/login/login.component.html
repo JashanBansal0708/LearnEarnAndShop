@@ -1,0 +1,40 @@
+<section fxLayoutAlign="center center">
+  <mat-card ngClass.gt-sm="desktop" ngClass.lt-md="mobile">
+    <form #f="ngForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center" >
+      <mat-icon> lock</mat-icon>
+      <mat-form-field appearance="outline" ngClass.gt-sm="desktop-input" ngClass.lt-md="mobile-input">
+        <mat-label>Your Email</mat-label>
+        <input 
+          matInput
+          type="email"
+          placeholder="Enter your email"
+          required
+          pattern="[^ @]*@[^ @]*"
+          ngModel
+          name="email"
+          #emailInput="ngModel" 
+          >
+        <mat-error *ngIf="emailInput.errors?.required">Field must not be empty.</mat-error>
+        <mat-error *ngIf="emailInput.errors?.pattern">E-Mail is invalid.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" hintLabel="Should be at-least 6 characters long." ngClass.gt-sm="desktop-input" ngClass.lt-md="mobile-input">
+        <mat-label>Your Password</mat-label>
+        <input 
+          matInput 
+          type="password"
+          placeholder="Enter your password"
+          required
+          minlength="6"
+          ngModel
+          name="password"
+          #passwordInput="ngModel">
+          <mat-hint align="end" *ngIf="passwordInput.value.length<6">{{passwordInput.value?.length}}/6</mat-hint>
+          <mat-hint align="end" *ngIf="passwordInput.value?.length>=6">
+            <mat-icon>done_outline</mat-icon>
+          </mat-hint>
+          <mat-error *ngIf="passwordInput.errors?.minlength">password must be 6 characters long</mat-error>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+  </mat-card>
+</section>
